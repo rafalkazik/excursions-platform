@@ -4,6 +4,7 @@
   --borderInputColor: #c0c0c0;
   --btnColor: #3c59c9;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +27,7 @@ html {
 .logo--heading {
   margin: 2rem auto 0 auto;
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--btnColor);
 }
 
@@ -90,18 +91,28 @@ input:focus {
   background-color: var(--btnColor);
   color: #fff;
   font-weight: 300;
+  transition: 0.1s linear;
 }
 
-.order__field-input:hover {
+.order__field-input:hover,
+.excursions__field-input--update:hover {
   cursor: pointer;
+  outline-offset: -1px;
+  outline: 2px solid var(--btnColor);
+  color: var(--btnColor);
+  background-color: #fff;
 }
 
 .excursions {
-  margin: 4rem 0 2rem 0;
+  width: 75vw;
+
   font-size: 1.3rem;
   list-style: none;
-  width: 75vw;
   max-width: 500px;
+}
+
+.excursions__item {
+  margin: 4rem 0 2rem 0;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--lightColor);
 }
@@ -138,10 +149,7 @@ input:focus {
   background-color: var(--btnColor);
   color: #fff;
   font-weight: 300;
-}
-
-.excursions__field-input--update:hover {
-  cursor: pointer;
+  transition: 0.1s linear;
 }
 
 .excursions__field-input--remove {
@@ -154,10 +162,14 @@ input:focus {
   background-color: #fff;
   color: var(--btnColor);
   font-weight: 300;
+  transition: 0.1s linear;
 }
 
 .excursions__field-input--remove:hover {
   cursor: pointer;
+  outline: 2px solid #fff;
+  color: #fff;
+  background-color: var(--btnColor);
 }
 
 .picture__travel {
@@ -167,14 +179,25 @@ input:focus {
 @media (min-width: 992px) {
   body {
     display: flex;
-    /* flex-direction: row; */
+    justify-content: center;
+    flex-direction: row;
   }
   .content-wrapper {
     width: 50vw;
+    max-width: 700px;
     padding: 1rem;
+  }
+  .logo--heading {
+    margin-top: 7rem;
+    font-size: 3rem;
+  }
+
+  .panel--heading {
+    font-size: 2.5rem;
   }
   .form__label {
     padding: 0 2rem;
+    font-size: 1.5rem;
   }
   .excursions {
     padding-left: 2rem;
@@ -185,33 +208,32 @@ input:focus {
     margin: 1rem 2rem;
   }
 
-  /* .order__field-input {
-    width: 75vw;
-    max-width: 500px;
-  } */
+  .form__field {
+    font-size: 1.3rem;
+  }
+
+  .order__field-input,
+  .excursions__field-input--update,
+  .excursions__field-input--remove {
+    font-size: 1.4rem;
+  }
+
+  .picture-wrapper {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+  }
 
   .picture__travel {
     width: 50vw;
+    max-width: 700px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
+    top: 15%;
   }
   .travel__img {
+    align-self: center;
     width: 100%;
+    height: auto;
   }
 }
-
-/* .excurions__item {
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 20px;
-  width: calc(50% - 20px);
-} */
-
-/* .panel__form {
-  background-color: #f4f4f4;
-  padding: 20px;
-  width: 30%;
-} */
