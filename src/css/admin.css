@@ -176,6 +176,10 @@ input:focus {
   display: none;
 }
 
+.excursions__item--prototype {
+  display: none;
+}
+
 @media (min-width: 992px) {
   body {
     display: flex;
