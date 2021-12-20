@@ -3,6 +3,7 @@
   --lightColor: #dadada;
   --borderInputColor: #c0c0c0;
   --btnColor: #3c59c9;
+  --btnColorActive: #129c67;
 }
 
 * {
@@ -150,6 +151,19 @@ input:focus {
   color: #fff;
   font-weight: 300;
   transition: 0.1s linear;
+}
+
+.excursions__field-input--update-active {
+  background-color: var(--btnColorActive);
+  outline-offset: -1px;
+}
+.excursions__field-input--update-active:focus {
+  outline: none;
+}
+.excursions__field-input--update-active:hover {
+  outline: 2px solid var(--btnColorActive);
+  /* border: 2px solid var(--btnColorActive); */
+  color: var(--btnColorActive);
 }
 
 .excursions__field-input--remove {

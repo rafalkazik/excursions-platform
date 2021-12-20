@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   loadExcurisons();
   removeExcursions();
+  updateExcursions();
   addExcursions();
 }
 
@@ -91,6 +92,68 @@ function removeExcursions() {
         .then((resp) => console.log(resp))
         .catch((err) => console.error(err))
         .finally(loadExcurisons);
+    }
+  });
+}
+
+function updateExcursions() {
+  const excursionsList = document.querySelector(".panel__excursions");
+
+  excursionsList.addEventListener("click", (e) => {
+    const targetEl = e.target;
+
+    if (targetEl.classList.contains("excursions__field-input--update")) {
+      const updateBtnParent = targetEl.parentElement;
+      const formElement = updateBtnParent.parentElement;
+      const currentExcursionElement = formElement.parentElement;
+      const h2List = currentExcursionElement.querySelectorAll("h2");
+      const pList = currentExcursionElement.querySelectorAll("p");
+      const strongList = currentExcursionElement.querySelectorAll("strong");
+
+      const editableItemsConcat = [...h2List, ...pList, ...strongList];
+
+      const isEditable = editableItemsConcat.every(
+        (span) => span.isContentEditable
+      );
+
+      if (isEditable) {
+        const id = currentExcursionElement.dataset.id;
+        console.log(targetEl);
+
+        const data = {
+          name: editableItemsConcat[0].innerText,
+          description: editableItemsConcat[1].innerText,
+          adultPrice: editableItemsConcat[2].innerText,
+          childPrice: editableItemsConcat[3].innerText,
+        };
+
+        const options = {
+          method: "PUT",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        };
+
+        fetch(`${excursionsUrl}/${id}`, options)
+          .then((resp) => console.log(resp))
+          .catch((err) => console.error(err))
+          .finally(() => {
+            (targetEl.value = "edytuj"),
+              targetEl.classList.remove(
+                "excursions__field-input--update-active"
+              );
+            editableItemsConcat.forEach(
+              (span) => (span.contentEditable = false)
+            );
+          });
+      } else {
+        targetEl.value = "zapisz";
+        targetEl.classList.add("excursions__field-input--update-active");
+
+        editableItemsConcat.forEach(
+          (span) => (span.contentEditable = true)
+          // console.log("essa")
+        );
+      }
     }
   });
 }

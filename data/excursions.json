@@ -1,4 +1,26 @@
 {
-  "excursions": [],
+  "excursions": [
+    {
+      "name": "Warszawa (stolica Polski)",
+      "description": "Warszawa, miasto stołeczne Warszawa — stolica Polski i województwa mazowieckiego, największe miasto w kraju, położone w jego centralnej części, na Nizinie Środkowomazowieckiej, na Mazowszu, nad Wisłą. Prawa miejskie uzyskała przed 1300.",
+      "adultPrice": "200",
+      "childPrice": "100",
+      "id": 2
+    },
+    {
+      "name": "Kraków",
+      "description": "Kraków, Stołeczne Królewskie Miasto Kraków – miasto na prawach powiatu położone w południowej Polsce nad Wisłą, drugie co do liczby mieszkańców i powierzchni miasto kraju, formalna stolica Polski do 1795 r.",
+      "adultPrice": "200",
+      "childPrice": "100",
+      "id": 3
+    },
+    {
+      "name": "Wrocław",
+      "description": "Wrocław – miasto na prawach powiatu w południowo-zachodniej Polsce, siedziba władz województwa dolnośląskiego i powiatu wrocławskiego. Położone w Europie Środkowej, na Nizinie Śląskiej, nad Odrą i czterema jej dopływami. Jest historyczną stolicą Dolnego Śląska, a także całego Śląska",
+      "adultPrice": "150",
+      "childPrice": "75",
+      "id": 4
+    }
+  ],
   "orders": []
 }
