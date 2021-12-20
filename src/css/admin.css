@@ -166,6 +166,11 @@ input:focus {
   color: var(--btnColorActive);
 }
 
+.excursions__field--active {
+  border-radius: 3px;
+  outline: 1px solid var(--lightColor);
+}
+
 .excursions__field-input--remove {
   margin-top: 1rem;
   padding: 1rem 4rem;
@@ -246,8 +251,9 @@ input:focus {
     width: 50vw;
     max-width: 700px;
     display: flex;
+    align-items: center;
     position: fixed;
-    top: 15%;
+    /* top: 15%; */
   }
   .travel__img {
     align-self: center;

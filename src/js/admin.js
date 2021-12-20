@@ -113,7 +113,7 @@ function updateExcursions() {
       const editableItemsConcat = [...h2List, ...pList, ...strongList];
 
       const isEditable = editableItemsConcat.every(
-        (span) => span.isContentEditable
+        (item) => item.isContentEditable
       );
 
       if (isEditable) {
@@ -141,18 +141,19 @@ function updateExcursions() {
               targetEl.classList.remove(
                 "excursions__field-input--update-active"
               );
-            editableItemsConcat.forEach(
-              (span) => (span.contentEditable = false)
-            );
+            editableItemsConcat.forEach((item) => {
+              item.contentEditable = false;
+              item.classList.remove("excursions__field--active");
+            });
           });
       } else {
         targetEl.value = "zapisz";
         targetEl.classList.add("excursions__field-input--update-active");
 
-        editableItemsConcat.forEach(
-          (span) => (span.contentEditable = true)
-          // console.log("essa")
-        );
+        editableItemsConcat.forEach((item) => {
+          item.contentEditable = true;
+          item.classList.add("excursions__field--active");
+        });
       }
     }
   });

@@ -61,11 +61,11 @@
                 dorośli: 1 x 99PLN, dzieci: 2 x 50PLN
               </p>
             </li>
-            <div class="order__total-price">
-              Razem:
-              <span class="order__total-price-value">199PLN</span>
-            </div>
           </ul>
+          <div class="order__total-price">
+            Razem:
+            <span class="order__total-price-value">199PLN</span>
+          </div>
         </section>
 
         <ul class="panel__excursions excursions">
@@ -84,13 +84,17 @@
             <form class="excursions__form">
               <div class="excursions__field">
                 <label class="excursions__field-name">
-                  Dorosły: 99PLN x
+                  Dorosły:
+                  <strong class="excursions__field-name--adult-price">99</strong
+                  >PLN x
                   <input class="excursions__field-input" name="adults" />
                 </label>
               </div>
               <div class="excursions__field">
                 <label class="excursions__field-name">
-                  Dziecko: 50PLN x
+                  Dziecko:
+                  <strong class="excursions__field-name--child-price">50</strong
+                  >PLN x
                   <input class="excursions__field-input" name="children" />
                 </label>
               </div>
@@ -99,7 +103,7 @@
                   class="
                     excursions__field-input excursions__field-input--submit
                   "
-                  value="dodaj do zamówinia"
+                  value="dodaj do zamówienia"
                   type="submit"
                 />
               </div>

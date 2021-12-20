@@ -136,6 +136,7 @@ input:focus {
 .summary__item {
   font-size: 1.3rem;
   border-bottom: 1px solid var(--btnColor);
+  margin-top: 1rem;
 }
 
 .summary__title {
@@ -170,9 +171,9 @@ input:focus {
 
 .excursions__field-name {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  /* gap: 0.8rem; */
+  gap: 0.2rem;
 }
 .excursions__field-input {
   border: 1px solid var(--borderInputColor);
@@ -206,6 +207,11 @@ input:focus {
   outline: 2px solid var(--btnColor);
   color: var(--btnColor);
   background-color: #fff;
+}
+
+.excursions__item--prototype,
+.summary__item--prototype {
+  display: none;
 }
 
 @media (min-width: 992px) {
