@@ -2,8 +2,9 @@
   --mainColor: #160f0a;
   --lightColor: #dadada;
   --borderInputColor: #c0c0c0;
-  /* --btnColor: #5aab61; */
+
   --btnColor: #489c81;
+  --inputError: #e21515;
 }
 
 * {
@@ -183,6 +184,11 @@ input:focus {
   padding: 5px;
   outline: none;
   margin: 0.5rem 0;
+}
+
+.excursions__field-input--error {
+  outline-offset: -2px;
+  outline: 2px solid var(--inputError);
 }
 
 .excursions__field--submit {

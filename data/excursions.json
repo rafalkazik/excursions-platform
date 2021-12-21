@@ -29,5 +29,13 @@
       "id": 5
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "fullBasket": [
+        "Miasto: Korfu, cena za całość: 2400 PLN (dorośli: 2 x 1200 PLN, dzieci: 2 x 0 PLN)"
+      ],
+      "fullPrice": 2400,
+      "id": 1
+    }
+  ]
 }
