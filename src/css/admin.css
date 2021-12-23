@@ -128,6 +128,7 @@ input:focus {
   font-weight: 300;
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  line-height: 2rem;
 }
 
 .excursions__field {

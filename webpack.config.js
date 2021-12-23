@@ -5,8 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 // importuję odpowiedni plugin
 module.exports = {
   entry: {
-    client: "./src/js/client.js",
-    admin: "./src/js/admin.js",
+    client: ["whatwg-fetch", "./src/js/client.js"],
+    admin: ["whatwg-fetch", "./src/js/admin.js"],
   },
   // definiuje pliki wejściowe
   // posiadające swoje identyfikatory [chunks]
@@ -45,10 +45,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ["html-loader"],
       },
-      // {
-      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      //   type: "asset/resource",
-      // },
     ],
   },
   plugins: [

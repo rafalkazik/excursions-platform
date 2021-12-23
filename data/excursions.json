@@ -15,19 +15,39 @@
       "id": 3
     },
     {
-      "name": "Wrocław",
-      "description": "Miasto na prawach powiatu w południowo-zachodniej Polsce, siedziba władz województwa dolnośląskiego i powiatu wrocławskiego. Położone w Europie Środkowej, na Nizinie Śląskiej, nad Odrą i czterema jej dopływami. Jest historyczną stolicą Dolnego Śląska, a także całego Śląska",
-      "adultPrice": "150",
-      "childPrice": "75",
-      "id": 4
-    },
-    {
       "name": "Częstochowa",
       "description": "Miasto na prawach powiatu w południowej Polsce, w województwie śląskim, siedziba powiatu częstochowskiego. W latach 1975–1998 stolica województwa częstochowskiego. Częstochowa, pomimo tego że znajduje się w granicach województwa śląskiego, historycznie, kulturowo i etnicznie należy do Małopolski.",
       "adultPrice": "100",
       "childPrice": "50",
       "id": 5
+    },
+    {
+      "name": "Wrocław",
+      "description": "Wrocław – miasto na prawach powiatu w południowo-zachodniej Polsce, siedziba władz województwa dolnośląskiego i powiatu wrocławskiego. Położone w Europie Środkowej, na Nizinie Śląskiej, nad Odrą i czterema jej dopływami. Jest historyczną stolicą Dolnego Śląska, a także całego Śląska.",
+      "adultPrice": "150",
+      "childPrice": "75",
+      "id": 6
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "clientName": "Rafal",
+      "clientEmail": "kazik@",
+      "fullBasket": [
+        "Miasto: Wrocław, cena za całość: 300 PLN (dorośli: 1 x 150 PLN, dzieci: 2 x 75 PLN)"
+      ],
+      "fullPrice": 300,
+      "id": 1
+    },
+    {
+      "clientName": "Rafal",
+      "clientEmail": "kazik@",
+      "fullBasket": [
+        "Miasto: Kraków, cena za całość: 600 PLN (dorośli: 2 x 200 PLN, dzieci: 2 x 100 PLN)",
+        "Miasto: Warszawa, cena za całość: 2000 PLN (dorośli: 4 x 200 PLN, dzieci: 12 x 100 PLN)"
+      ],
+      "fullPrice": 2600,
+      "id": 2
+    }
+  ]
 }

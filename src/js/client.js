@@ -1,6 +1,8 @@
 import "./../css/client.css";
 
-// import ExcursionsAPI from './ExcursionsAPI';
+import ExcursionsAPI from "./ExcursionsAPI";
+
+const api = new ExcursionsAPI();
 
 const excursionsUrl = "http://localhost:3000/excursions";
 const ordersUrl = "http://localhost:3000/orders";
@@ -13,17 +15,11 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   loadExcurisons();
   addExcursionToBasket();
-  // sumUpFinalPrice();
 }
 
 function loadExcurisons() {
-  fetch(excursionsUrl)
-    .then((resp) => {
-      if (resp.ok) {
-        return resp.json();
-      }
-      return Promise.reject(resp);
-    })
+  api
+    .loadData()
     .then((data) => insertExcursions(data))
     .catch((err) => console.error(err));
 }
@@ -283,29 +279,18 @@ function showExcursionsInBasket(e) {
       fullPrice: finalPriceBasket.reduce((a, b) => a + b),
     };
 
-    const options = {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    };
-
-    fetch(ordersUrl, options)
-      .then((resp) => console.log(resp))
+    api
+      .addOrder(data)
       .catch((err) => console.error(err))
       .finally(loadExcurisons);
-  }
-
-  if (nameOrderInputValue.length > 0) {
+  } else if (nameOrderInputValue.length > 0) {
     nameOrderInput.classList.remove("excursions__field-input--error");
-  }
-  if (emailOrderInputValue.includes("@")) {
+  } else if (emailOrderInputValue.includes("@")) {
     emailOrderInput.classList.remove("excursions__field-input--error");
-  }
-  if (nameOrderInputValue.length === 0) {
+  } else if (nameOrderInputValue.length === 0) {
     e.preventDefault();
     nameOrderInput.classList.add("excursions__field-input--error");
-  }
-  if (!emailOrderInputValue.includes("@")) {
+  } else if (!emailOrderInputValue.includes("@")) {
     e.preventDefault();
     emailOrderInput.classList.add("excursions__field-input--error");
   }
@@ -335,8 +320,6 @@ function removeExcursionFromBasket(e) {
     const totalOrderPrice = (document.querySelector(
       ".order__total-price-value"
     ).innerText = `${finalValuePrice} PLN`);
-
-    console.log(indexOfPrice);
   } else if (finalPriceBasket.length === 1) {
     totalOrderPrice.innerText = "";
     totalOrderPrice.innerText += 0 + " PLN";

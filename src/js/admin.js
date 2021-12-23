@@ -1,6 +1,8 @@
 import "./../css/admin.css";
 
-// import ExcursionsAPI from "./ExcursionsAPI";
+import ExcursionsAPI from "./ExcursionsAPI";
+
+const api = new ExcursionsAPI();
 
 const excursionsUrl = "http://localhost:3000/excursions";
 
@@ -14,13 +16,8 @@ function init() {
 }
 
 function loadExcurisons() {
-  fetch(excursionsUrl)
-    .then((resp) => {
-      if (resp.ok) {
-        return resp.json();
-      }
-      return Promise.reject(resp);
-    })
+  api
+    .loadData()
     .then((data) => insertExcursions(data))
     .catch((err) => console.error(err));
 }
@@ -82,14 +79,10 @@ function removeExcursions() {
       const removeBtnParent = targetEl.parentElement;
       const formElement = removeBtnParent.parentElement;
       const currentExcursionElement = formElement.parentElement;
+      const id = currentExcursionElement.dataset.id;
 
-      function getExcursionID() {
-        const id = currentExcursionElement.dataset.id;
-        return id;
-      }
-      const options = { method: "DELETE" };
-      fetch(`${excursionsUrl}/${getExcursionID()}`, options)
-        .then((resp) => console.log(resp))
+      api
+        .removeData(id)
         .catch((err) => console.error(err))
         .finally(loadExcurisons);
     }
@@ -127,14 +120,8 @@ function updateExcursions() {
           childPrice: editableItemsConcat[3].innerText,
         };
 
-        const options = {
-          method: "PUT",
-          body: JSON.stringify(data),
-          headers: { "Content-Type": "application/json" },
-        };
-
-        fetch(`${excursionsUrl}/${id}`, options)
-          .then((resp) => console.log(resp))
+        api
+          .removeData(id, data)
           .catch((err) => console.error(err))
           .finally(() => {
             (targetEl.value = "edytuj"),
@@ -176,14 +163,8 @@ function addExcursions() {
       childPrice: childPrice.value,
     };
 
-    const options = {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    };
-
-    fetch(excursionsUrl, options)
-      .then((resp) => console.log(resp))
+    api
+      .addData(data)
       .catch((err) => console.error(err))
       .finally(loadExcurisons);
   });
