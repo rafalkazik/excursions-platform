@@ -6,8 +6,10 @@ const api = new ExcursionsAPI();
 
 const excursionsUrl = "http://localhost:3000/excursions";
 const ordersUrl = "http://localhost:3000/orders";
+
 const basket = [];
 let finalPriceBasket = [];
+
 const basketUlElement = document.querySelector(".panel__summary");
 
 document.addEventListener("DOMContentLoaded", init);
@@ -58,6 +60,13 @@ function insertExcursions(excursionsArr) {
     cloneExcursionsItem.dataset.id = item.id;
     excursionsList.appendChild(cloneExcursionsItem);
   });
+}
+
+function sumUpFinalPrice() {
+  const finalValuePrice = finalPriceBasket.reduce((a, b) => a + b);
+  const totalOrderPrice = (document.querySelector(
+    ".order__total-price-value"
+  ).innerText = `${finalValuePrice} PLN`);
 }
 
 function addExcursionToBasket() {
@@ -143,8 +152,6 @@ function addExcursionToBasket() {
 
       console.log(`Cena za CALE zamowienie: ${finalPriceForAll()}`);
 
-      finalPriceBasket.push(finalPriceForAll());
-
       // VALIDATE FORM
 
       const childrenAmountInput = targetChildPriceParent.querySelector(
@@ -155,9 +162,11 @@ function addExcursionToBasket() {
         "input[name='adults']"
       );
 
-      const childrenAmountInputValue = childrenAmountInput.value;
+      // const amountOrderForm = childrenAmountInput.parentElement;
 
-      const adultsAmountInputValue = adultsAmountInput.value;
+      let childrenAmountInputValue = childrenAmountInput.value;
+
+      let adultsAmountInputValue = adultsAmountInput.value;
 
       if (
         !isNaN(parseInt(childrenAmountInputValue)) &&
@@ -179,7 +188,7 @@ function addExcursionToBasket() {
             targetExcursionDataForm.previousElementSibling;
 
           // DATA TO VALIDATE FORM
-          const childrenAmount = targetChildPriceParent.querySelector(
+          let childrenAmount = targetChildPriceParent.querySelector(
             "input[name='children']"
           ).value;
 
@@ -211,29 +220,39 @@ function addExcursionToBasket() {
           const cloneBasketExcursion = basketExcursion.cloneNode(true);
           cloneBasketExcursion.classList.remove("summary__item--prototype");
           basketList.appendChild(cloneBasketExcursion);
+
+          childrenAmountInput.value = "";
+          adultsAmountInput.value = "";
         }
+
+        finalPriceBasket.push(finalPriceForAll());
         showExcursionOrderInBasket();
+        sumUpFinalPrice();
       }
-      if (!isNaN(parseInt(childrenAmountInputValue))) {
+      if (
+        !isNaN(parseInt(childrenAmountInputValue)) ||
+        parseInt(childrenAmountInputValue).length > 0
+      ) {
         childrenAmountInput.classList.remove("excursions__field-input--error");
       }
-      if (!isNaN(parseInt(adultsAmountInputValue))) {
+      if (
+        !isNaN(parseInt(adultsAmountInputValue)) ||
+        parseInt(adultsAmountInputValue).length > 0
+      ) {
         adultsAmountInput.classList.remove("excursions__field-input--error");
       }
-      if (isNaN(parseInt(childrenAmountInputValue))) {
+      if (
+        isNaN(parseInt(childrenAmountInputValue)) ||
+        parseInt(childrenAmountInputValue).length === 0
+      ) {
         childrenAmountInput.classList.add("excursions__field-input--error");
       }
-      if (isNaN(parseInt(adultsAmountInputValue))) {
+      if (
+        isNaN(parseInt(adultsAmountInputValue)) ||
+        parseInt(adultsAmountInputValue).length === 0
+      ) {
         adultsAmountInput.classList.add("excursions__field-input--error");
       }
-
-      function sumUpFinalPrice() {
-        const finalValuePrice = finalPriceBasket.reduce((a, b) => a + b);
-        const totalOrderPrice = (document.querySelector(
-          ".order__total-price-value"
-        ).innerText = `${finalValuePrice} PLN`);
-      }
-      sumUpFinalPrice();
     }
   });
 }

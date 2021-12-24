@@ -31,22 +31,21 @@
   ],
   "orders": [
     {
-      "clientName": "Rafal",
-      "clientEmail": "kazik@",
+      "clientName": "Rafał",
+      "clientEmail": "kazik.raf@gmail.com",
       "fullBasket": [
-        "Miasto: Wrocław, cena za całość: 300 PLN (dorośli: 1 x 150 PLN, dzieci: 2 x 75 PLN)"
+        "Miasto: Warszawa, cena za całość: 1100 PLN (dorośli: 4 x 200 PLN, dzieci: 3 x 100 PLN)"
       ],
-      "fullPrice": 300,
+      "fullPrice": 1100,
       "id": 1
     },
     {
-      "clientName": "Rafal",
+      "clientName": "rafal",
       "clientEmail": "kazik@",
       "fullBasket": [
-        "Miasto: Kraków, cena za całość: 600 PLN (dorośli: 2 x 200 PLN, dzieci: 2 x 100 PLN)",
-        "Miasto: Warszawa, cena za całość: 2000 PLN (dorośli: 4 x 200 PLN, dzieci: 12 x 100 PLN)"
+        "Miasto: Warszawa, cena za całość: 400 PLN (dorośli: 1 x 200 PLN, dzieci: 2 x 100 PLN)"
       ],
-      "fullPrice": 2600,
+      "fullPrice": 400,
       "id": 2
     }
   ]
