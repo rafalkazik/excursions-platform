@@ -27,26 +27,26 @@
       "adultPrice": "150",
       "childPrice": "75",
       "id": 6
+    },
+    {
+      "name": "Poznań",
+      "description": "Wielkopolska",
+      "adultPrice": "150",
+      "childPrice": "75",
+      "id": 7
     }
   ],
   "orders": [
     {
-      "clientName": "Rafał",
-      "clientEmail": "kazik.raf@gmail.com",
+      "clientName": "Rafał Kazik",
+      "clientEmail": "rafal@wymysl.to",
       "fullBasket": [
-        "Miasto: Warszawa, cena za całość: 1100 PLN (dorośli: 4 x 200 PLN, dzieci: 3 x 100 PLN)"
+        "Miasto: Poznań, cena za całość: 375 PLN (dorośli: 2 x 150 PLN, dzieci: 1 x 75 PLN)",
+        "Miasto: Warszawa, cena za całość: 100 PLN (dorośli: 0 x 200 PLN, dzieci: 1 x 100 PLN)",
+        "Miasto: Częstochowa, cena za całość: 300 PLN (dorośli: 3 x 100 PLN, dzieci: 0 x 50 PLN)"
       ],
-      "fullPrice": 1100,
+      "fullPrice": 775,
       "id": 1
-    },
-    {
-      "clientName": "rafal",
-      "clientEmail": "kazik@",
-      "fullBasket": [
-        "Miasto: Warszawa, cena za całość: 400 PLN (dorośli: 1 x 200 PLN, dzieci: 2 x 100 PLN)"
-      ],
-      "fullPrice": 400,
-      "id": 2
     }
   ]
 }
