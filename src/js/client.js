@@ -302,14 +302,18 @@ function showExcursionsInBasket(e) {
       .addOrder(data)
       .catch((err) => console.error(err))
       .finally(loadExcurisons);
-  } else if (nameOrderInputValue.length > 0) {
+  }
+  if (nameOrderInputValue.length > 0) {
     nameOrderInput.classList.remove("excursions__field-input--error");
-  } else if (emailOrderInputValue.includes("@")) {
+  }
+  if (emailOrderInputValue.includes("@")) {
     emailOrderInput.classList.remove("excursions__field-input--error");
-  } else if (nameOrderInputValue.length === 0) {
+  }
+  if (nameOrderInputValue.length === 0) {
     e.preventDefault();
     nameOrderInput.classList.add("excursions__field-input--error");
-  } else if (!emailOrderInputValue.includes("@")) {
+  }
+  if (!emailOrderInputValue.includes("@")) {
     e.preventDefault();
     emailOrderInput.classList.add("excursions__field-input--error");
   }
