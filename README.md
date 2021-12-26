@@ -16,19 +16,19 @@ In this task, my job was to create platform, where you are able to create an exc
 The admin panel includes options such as:
 
 - adding excursions (containing its name, description and price per adult/child) to the website and also to the JSON file;
-  ![](./readme_photos/admin.png)
+  ![](./src/assets/readme_photos/admin.png)
 - removing newly created excursions;
 - updating excursions data;
-  ![](./readme_photos/admin_update.png)
+  ![](./src/assets/readme_photos/admin_update.png)
 
 ## :man_in_tuxedo: Client
 
 The admin panel includes options such as:
 
 - getting excursions from JSON file;
-  ![](./readme_photos/client.png)
+  ![](./src/assets/readme_photos/client.png)
 - adding chosen excursion to the basket and counting final price;
-  ![](./readme_photos/client_order_basket.png)
+  ![](./src/assets/readme_photos/client_order_basket.png)
 - making an order by submitting the top form and posting data on the JSON file.
 
 ## :mailbox: Feel free to contact me
