@@ -11,6 +11,22 @@ API i Fetch / Webpack**
 
 In this task, my job was to create platform, where you are able to create an excursion offer as an **admin** and choose excursion as a **client**.
 
+## :gear: Installation
+
+The project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). To run the app on your device you should install all dependencies. Then create a localhost port and run your web explorer.
+
+Let's start with installing all dependencies. Move to the app main workspace and run:
+
+    npm i
+
+To create a localhost port you should type:
+
+    npm start
+
+Our repositories search engine is ready at port 8080.
+
+    http://localhost:8080/
+
 ## :mechanic: Admin
 
 The admin panel includes options such as:
