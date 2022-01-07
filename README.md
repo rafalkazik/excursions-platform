@@ -23,7 +23,7 @@ To create a localhost port you should type:
 
     npm start
 
-Our repositories search engine is ready at port 8080.
+Our app is ready at port 8080.
 
     http://localhost:8080/
 
