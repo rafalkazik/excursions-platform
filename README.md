@@ -23,9 +23,17 @@ To create a localhost port you should type:
 
     npm start
 
-Our app is ready at port 8080.
+Our Client app is ready at port 8080.
 
     http://localhost:8080/
+
+And our admin app is ready at port 8080.
+
+    http://localhost:8080/admin.html
+
+You need to run our JSON server:
+
+    json-server --watch ./data/excursions.json
 
 ## :mechanic: Admin
 
